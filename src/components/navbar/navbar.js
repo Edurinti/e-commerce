@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import { Login } from "./login"
 
 const NavBar = ({ onSearch, cartItemCount }) => {
 
     const [searchQuery, setSearchQuery] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const handleSubmit = () => {
         if (searchQuery.trim().length) {
@@ -33,8 +35,10 @@ const NavBar = ({ onSearch, cartItemCount }) => {
                                 <button type="button" className="search-btn" onClick={handleSubmit} >
                                     Search
                                 </button>
+                                
                             </form>
                         </div>
+                        <Login isLoggedIn={isLoggedIn} onToggle={() => setIsLoggedIn(prev => !prev)} />
                         <Link to="/cart" className="link headerCart">
                             <img className="cartImg" src="/cart.svg" alt="cart" />
                             {cartItemCount > 0 && (

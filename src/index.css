@@ -507,3 +507,10 @@ img {
     grid-template-columns: 1fr;
   }
 }
+.login-btn {
+  border: solid 2px #fff;
+  padding: 0 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-left: 4px;
+}
