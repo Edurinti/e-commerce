@@ -4,6 +4,7 @@ import { NavBar } from "./components/navbar"
 import { Products } from "./pages/products"
 import { Product } from "./pages/product"
 import { Cart } from "./pages/cart"
+import { Login } from "./pages/login"
 import { NotFound } from "./pages/not-found"
 
 import { useCart } from './context/cart'
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Products />} />
         <Route path="/product/:productId" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

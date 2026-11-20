@@ -1,9 +1,14 @@
-const Login = ({ isLoggedIn, onToggle }) => {
+import { Link } from "react-router-dom"
+
+const Login = () => {
     return (
-        <button className="login-btn" onClick={onToggle}>
-            {isLoggedIn ? 'Logout' : 'Login'}
-        </button>
+        <Link to="/login" className="link">
+            <button className="login-btn">
+                Login
+            </button>
+        </Link>
     )
 }
 
 export { Login }
+

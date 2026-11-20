@@ -5,7 +5,6 @@ import { Login } from "./login"
 const NavBar = ({ onSearch, cartItemCount }) => {
 
     const [searchQuery, setSearchQuery] = useState('');
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const handleSubmit = () => {
         if (searchQuery.trim().length) {
@@ -35,16 +34,18 @@ const NavBar = ({ onSearch, cartItemCount }) => {
                                 <button type="button" className="search-btn" onClick={handleSubmit} >
                                     Search
                                 </button>
-                                
+
                             </form>
                         </div>
-                        <Login isLoggedIn={isLoggedIn} onToggle={() => setIsLoggedIn(prev => !prev)} />
-                        <Link to="/cart" className="link headerCart">
-                            <img className="cartImg" src="/cart.svg" alt="cart" />
-                            {cartItemCount > 0 && (
-                                <div className="cartCounter">{cartItemCount <= 9 ? cartItemCount : "9+"}</div>
-                            )}
-                        </Link>
+                        <div className="navbarActions">
+                            <Login />
+                            <Link to="/cart" className="link headerCart">
+                                <img className="cartImg" src="/cart.svg" alt="cart" />
+                                {cartItemCount > 0 && (
+                                    <div className="cartCounter">{cartItemCount <= 9 ? cartItemCount : "9+"}</div>
+                                )}
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </header>
